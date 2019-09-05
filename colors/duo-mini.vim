@@ -1,5 +1,5 @@
 " Project: Duo Mini Vim
-" Repository:
+" Repository: https://github.com/seesleestak/duo-mini
 " License: MIT
 
 hi clear
