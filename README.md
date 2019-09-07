@@ -1,5 +1,7 @@
 # duo-mini
 
+![duo-mini screenshot](https://i.imgur.com/luyUDSM.png)
+
 Two color, minimal colorscheme. Based heavily on this fork of [vim-colors-plain](https://github.com/NerdyPepper/vim-colors-plain)
 
 ## Options
