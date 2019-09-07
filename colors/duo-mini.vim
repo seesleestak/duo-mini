@@ -165,7 +165,7 @@ call s:h("TabLine",       {"fg": s:fg, "bg": s:primary})
 call s:h("TabLineSel",    {"fg": s:fg, "bg": s:bg, "gui": s:bold, "cterm": s:bold})
 call s:h("TabLineFill",   {"fg": s:fg, "bg": s:primary})
 call s:h("CursorColumn",  {"bg": s:subtle})
-call s:h("CursorLine",    {"bg": s:subtle})
+call s:h("CursorLine",    {"bg": s:bg})
 call s:h("ColorColumn",   {"bg": s:subtle})
 
 call s:h("MatchParen",    {"bg": s:selection, "fg": s:fg})
