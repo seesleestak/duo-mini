@@ -38,21 +38,21 @@ function! s:h(group, style)
 endfunction
 
 call s:h("Normal",        {"bg": s:bg, "fg": s:fg})
+call s:h("Noise",        {"bg": s:bg, "fg": s:fg})
 call s:h("Cursor",        {"bg": s:green, "fg": s:fg})
 call s:h("Comment",       {"fg": s:subtle, "cterm": s:italic})
 call s:h("Function",      {"fg": s:fg, "cterm": s:bold})
-
+call s:h("Statement",     {"bg": s:bg, "fg": s:norm, "cterm": s:bold})
 call s:h("Constant",      {"bg": s:bg, "fg": s:primary})
+
 hi! link Character        Constant
 hi! link Number           Constant
 hi! link Boolean          Constant
 hi! link Float            Constant
 hi! link String           Constant
-
-call s:h("Statement",     {"bg": s:bg, "fg": s:norm, "cterm": s:bold})
-hi! link Conditonal       Statement
-hi! link Repeat           Statement
-hi! link Label            Statement
+hi! link Conditonal       Normal
+hi! link Repeat           Normal
+hi! link Label            Normal
 hi! link Operator         Noise
 hi! link Keyword          Statement
 hi! link Exception        Statement
