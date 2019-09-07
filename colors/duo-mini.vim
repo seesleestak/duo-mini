@@ -10,16 +10,47 @@ endif
 let g:colors_name = "duo-mini"
 set background=dark
 
+" Default colors
 let s:bg        = { "gui": "#252A33", "cterm": "0" }  " Background color
 let s:fg        = { "gui": "#D8DEE9", "cterm": "7" }  " Normal text color
 let s:primary   = { "gui": "#88C0D0", "cterm": "2" }  " Accent color
 let s:subtle    = { "gui": "#616E88", "cterm": "8" }  " Comment color
-let s:selection = { "gui": "#434C5E", "cterm": "0" }
+let s:selection = { "gui": "#434C5E", "cterm": "0" }  " Visual selection color
 let s:red       = { "gui": "#BF616A", "cterm": "1" }
 let s:yellow    = { "gui": "#EBCB8B", "cterm": "3" }
 let s:green     = { "gui": "#A3BE8C", "cterm": "2" } 
 
-let s:norm = s:fg
+if exists("g:duo_mini_bg")
+  let s:bg = { "gui": g:duo_mini_bg, "cterm": "0" } 
+endif
+
+if exists("g:duo_mini_fg")
+  let s:fg = { "gui": g:duo_mini_fg, "cterm": "7" }
+endif
+
+if exists("g:duo_mini_primary")
+  let s:primary = { "gui": g:duo_mini_primary, "cterm": "2" } 
+endif
+
+if exists("g:duo_mini_subtle")
+  let s:subtle = { "gui": g:duo_mini_subtle, "cterm": "8" }
+endif
+
+if exists("g:duo_mini_selection")
+  let s:selection = { "gui": g:duo_mini_selection, "cterm": "0" }
+endif
+
+if exists("g:duo_mini_red")
+  let s:red = { "gui": g:duo_mini_red, "cterm": "1" }
+endif
+
+if exists("g:duo_mini_yellow")
+  let s:yellow = { "gui": g:duo_mini_yellow, "cterm": "3" } 
+endif
+
+if exists("g:duo_mini_green")
+  let s:green = { "gui": g:duo_mini_green, "cterm": "2" }
+endif
 
 let s:bold = "bold,"
 let s:italic = "italic,"
@@ -42,7 +73,7 @@ call s:h("Noise",        {"bg": s:bg, "fg": s:fg})
 call s:h("Cursor",        {"bg": s:green, "fg": s:fg})
 call s:h("Comment",       {"fg": s:subtle, "cterm": s:italic})
 call s:h("Function",      {"fg": s:fg, "cterm": s:bold})
-call s:h("Statement",     {"bg": s:bg, "fg": s:norm, "cterm": s:bold})
+call s:h("Statement",     {"bg": s:bg, "fg": s:fg, "cterm": s:bold})
 call s:h("Constant",      {"bg": s:bg, "fg": s:primary})
 
 hi! link Character        Constant
@@ -74,7 +105,7 @@ hi! link SpecialComment   Special
 hi! link Debug            Special
 hi! link Conceal          NonText
 
-call s:h("Underlined",    {"fg": s:norm, "gui": "underline", "cterm": s:underline})
+call s:h("Underlined",    {"fg": s:fg, "gui": "underline", "cterm": s:underline})
 call s:h("Ignore",        {"fg": s:bg})
 call s:h("Error",         {"fg": s:red, "bg": s:bg, "cterm": s:bold})
 call s:h("Todo",          {"fg": s:yellow, "gui": s:bold, "cterm": s:bold})
@@ -126,26 +157,26 @@ call s:h("StatusLineOk",      {"gui": s:underline, "bg": s:bg, "fg": s:green})
 call s:h("StatusLineError",   {"gui": s:underline, "bg": s:bg, "fg": s:red})
 call s:h("StatusLineWarning", {"gui": s:underline, "bg": s:bg, "fg": s:yellow})
 
-call s:h("Pmenu",         {"fg": s:norm, "bg": s:bg})
+call s:h("Pmenu",         {"fg": s:fg, "bg": s:bg})
 call s:h("PmenuSel",      {"fg": s:bg, "bg": s:primary, "gui": s:bold})
-call s:h("PmenuSbar",     {"fg": s:norm, "bg": s:subtle})
-call s:h("PmenuThumb",    {"fg": s:norm, "bg": s:subtle})
-call s:h("TabLine",       {"fg": s:norm, "bg": s:bg})
-call s:h("TabLineSel",    {"fg": s:norm, "bg": s:bg, "gui": s:bold, "cterm": s:bold})
-call s:h("TabLineFill",   {"fg": s:norm, "bg": s:primary})
+call s:h("PmenuSbar",     {"fg": s:fg, "bg": s:subtle})
+call s:h("PmenuThumb",    {"fg": s:fg, "bg": s:subtle})
+call s:h("TabLine",       {"fg": s:fg, "bg": s:bg})
+call s:h("TabLineSel",    {"fg": s:fg, "bg": s:bg, "gui": s:bold, "cterm": s:bold})
+call s:h("TabLineFill",   {"fg": s:fg, "bg": s:primary})
 call s:h("CursorColumn",  {"bg": s:subtle})
 call s:h("CursorLine",    {"bg": s:bg})
 call s:h("ColorColumn",   {"bg": s:subtle})
 
-call s:h("MatchParen",    {"bg": s:subtle, "fg": s:norm})
+call s:h("MatchParen",    {"bg": s:selection, "fg": s:fg})
 call s:h("qfLineNr",      {"fg": s:subtle})
 
-call s:h("htmlH1",        {"bg": s:bg, "fg": s:norm})
-call s:h("htmlH2",        {"bg": s:bg, "fg": s:norm})
-call s:h("htmlH3",        {"bg": s:bg, "fg": s:norm})
-call s:h("htmlH4",        {"bg": s:bg, "fg": s:norm})
-call s:h("htmlH5",        {"bg": s:bg, "fg": s:norm})
-call s:h("htmlH6",        {"bg": s:bg, "fg": s:norm})
+call s:h("htmlH1",        {"bg": s:bg, "fg": s:fg})
+call s:h("htmlH2",        {"bg": s:bg, "fg": s:fg})
+call s:h("htmlH3",        {"bg": s:bg, "fg": s:fg})
+call s:h("htmlH4",        {"bg": s:bg, "fg": s:fg})
+call s:h("htmlH5",        {"bg": s:bg, "fg": s:fg})
+call s:h("htmlH6",        {"bg": s:bg, "fg": s:fg})
 
 hi link diffRemoved       DiffDelete
 hi link diffAdded         DiffAdd
@@ -177,3 +208,4 @@ hi link markdownCode Constant
 hi link markdownCodeBlock Constant
 hi link markdownCodeDelimiter Constant
 hi link markdownHeadingDelimiter Constant
+hi link markdownUrl Constant
