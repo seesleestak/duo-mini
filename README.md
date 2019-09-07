@@ -4,9 +4,15 @@
 
 Two color, minimal colorscheme. Based heavily on this fork of [vim-colors-plain](https://github.com/NerdyPepper/vim-colors-plain)
 
-## Options
+## Installation
 
-The following options are configurable. The defaults are based on the [nord colorscheme](https://www.nordtheme.com/) with some tweaks.
+```
+Plug 'seesleestak/duo-mini'
+```
+
+## Options & Usage
+
+All colors are configurable. The defaults are based on the [nord colorscheme](https://www.nordtheme.com/) with some tweaks.
 
 | Option                  | Description            |
 | ----------------------- | ---------------------- |
@@ -18,3 +24,9 @@ The following options are configurable. The defaults are based on the [nord colo
 | `g:duo_mini_red`        |                        |
 | `g:duo_mini_yellow`     |                        |
 | `g:duo_mini_green`      |                        |
+
+For example, if you wanted to change the background color to something darker you could set the following in your `.vimrc`:
+
+```
+let g:duo_mini_bg = "#00000F"
+```
