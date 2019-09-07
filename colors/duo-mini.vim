@@ -12,7 +12,7 @@ set background=dark
 
 let s:bg        = { "gui": "#252A33", "cterm": "0" }  " Background color
 let s:fg        = { "gui": "#D8DEE9", "cterm": "7" }  " Normal text color
-let s:secondary = { "gui": "#88C0D0", "cterm": "2" }  " Accent color
+let s:primary   = { "gui": "#88C0D0", "cterm": "2" }  " Accent color
 let s:subtle    = { "gui": "#616E88", "cterm": "8" }  " Comment color
 let s:selection = { "gui": "#434C5E", "cterm": "0" }
 let s:red       = { "gui": "#BF616A", "cterm": "1" }
@@ -42,7 +42,7 @@ call s:h("Cursor",        {"bg": s:green, "fg": s:fg})
 call s:h("Comment",       {"fg": s:subtle, "cterm": s:italic})
 call s:h("Function",      {"fg": s:fg, "cterm": s:bold})
 
-call s:h("Constant",      {"bg": s:bg, "fg": s:secondary})
+call s:h("Constant",      {"bg": s:bg, "fg": s:primary})
 hi! link Character        Constant
 hi! link Number           Constant
 hi! link Boolean          Constant
@@ -57,6 +57,7 @@ hi! link Operator         Noise
 hi! link Keyword          Statement
 hi! link Exception        Statement
 hi! link PreProc          Normal
+hi! link Identifier       Normal
 hi! link Include          Statement
 hi! link Define           PreProc
 hi! link Macro            PreProc
@@ -79,7 +80,7 @@ call s:h("Error",         {"fg": s:red, "bg": s:bg, "cterm": s:bold})
 call s:h("Todo",          {"fg": s:yellow, "gui": s:bold, "cterm": s:bold})
 call s:h("SpecialKey",    {"fg": s:subtle})
 call s:h("NonText",       {"fg": s:subtle})
-call s:h("Directory",     {"fg": s:secondary})
+call s:h("Directory",     {"fg": s:primary})
 call s:h("ErrorMsg",      {"fg": s:red})
 call s:h("IncSearch",     {"bg": s:subtle, "fg": s:bg})
 call s:h("Search",        {"bg": s:subtle, "fg": s:bg})
@@ -126,12 +127,53 @@ call s:h("StatusLineError",   {"gui": s:underline, "bg": s:bg, "fg": s:red})
 call s:h("StatusLineWarning", {"gui": s:underline, "bg": s:bg, "fg": s:yellow})
 
 call s:h("Pmenu",         {"fg": s:norm, "bg": s:bg})
-call s:h("PmenuSel",      {"fg": s:bg, "bg": s:secondary, "gui": s:bold})
-" call s:h("PmenuSbar",     {"fg": s:norm, "bg": s:bg_subtle})
-" call s:h("PmenuThumb",    {"fg": s:norm, "bg": s:bg_subtle})
-" call s:h("TabLine",       {"fg": s:norm_subtle, "bg": s:bg})
-" call s:h("TabLineSel",    {"fg": s:norm, "bg": s:bg, "gui": "bold", "cterm": "bold"})
-" call s:h("TabLineFill",   {"fg": s:norm_subtle, "bg": s:bg})
-" call s:h("CursorColumn",  {"bg": s:bg_very_subtle})
-" call s:h("CursorLine",    {"bg": s:cursor_line})
-" call s:h("ColorColumn",   {"bg": s:bg_subtle})
+call s:h("PmenuSel",      {"fg": s:bg, "bg": s:primary, "gui": s:bold})
+call s:h("PmenuSbar",     {"fg": s:norm, "bg": s:subtle})
+call s:h("PmenuThumb",    {"fg": s:norm, "bg": s:subtle})
+call s:h("TabLine",       {"fg": s:norm, "bg": s:bg})
+call s:h("TabLineSel",    {"fg": s:norm, "bg": s:bg, "gui": s:bold, "cterm": s:bold})
+call s:h("TabLineFill",   {"fg": s:norm, "bg": s:primary})
+call s:h("CursorColumn",  {"bg": s:subtle})
+call s:h("CursorLine",    {"bg": s:bg})
+call s:h("ColorColumn",   {"bg": s:subtle})
+
+call s:h("MatchParen",    {"bg": s:subtle, "fg": s:norm})
+call s:h("qfLineNr",      {"fg": s:subtle})
+
+call s:h("htmlH1",        {"bg": s:bg, "fg": s:norm})
+call s:h("htmlH2",        {"bg": s:bg, "fg": s:norm})
+call s:h("htmlH3",        {"bg": s:bg, "fg": s:norm})
+call s:h("htmlH4",        {"bg": s:bg, "fg": s:norm})
+call s:h("htmlH5",        {"bg": s:bg, "fg": s:norm})
+call s:h("htmlH6",        {"bg": s:bg, "fg": s:norm})
+
+hi link diffRemoved       DiffDelete
+hi link diffAdded         DiffAdd
+
+" JS
+hi link jsFlowTypeKeyword Statement
+hi link jsFlowImportType Statement
+hi link jsFunction Statement
+hi link jsGlobalObjects Normal
+hi link jsGlobalNodeObjects Normal
+hi link jsArrowFunction Noise
+hi link StorageClass Statement
+
+" XML
+call s:h("xmlTag", {"bg": s:bg, "fg": s:primary})
+hi link xmlTagName xmlTag
+hi link xmlEndTag xmlTag
+hi link xmlAttrib xmlTag
+
+" Markdown
+hi link markdownH1 Statement
+hi link markdownH2 Statement
+hi link markdownH3 Statement
+hi link markdownH4 Statement
+hi link markdownH5 Statement
+hi link markdownH6 Statement
+hi link markdownListMarker Constant
+hi link markdownCode Constant
+hi link markdownCodeBlock Constant
+hi link markdownCodeDelimiter Constant
+hi link markdownHeadingDelimiter Constant
