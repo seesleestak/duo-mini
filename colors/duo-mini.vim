@@ -97,7 +97,7 @@ hi! link Type             Normal
 hi! link StorageClass     Type
 hi! link Structure        Type
 hi! link Typedef          Type
-hi! link Special          StatusLine
+hi! link Special          Normal
 hi! link SpecialChar      Special
 hi! link Tag              Special
 hi! link Delimiter        Special
@@ -151,21 +151,21 @@ hi link helpHyperTextEntry Title
 hi link helpHyperTextJump  String
 
 """ StatusLine
-call s:h("StatusLine",        {"bg": s:bg, "fg": s:fg})
+call s:h("StatusLine",        {"bg": s:primary, "fg": s:bg})
 call s:h("StatusLineNC",      {"cterm": s:underline, "bg": s:bg, "fg": s:fg})
 call s:h("StatusLineOk",      {"gui": s:underline, "bg": s:bg, "fg": s:green})
 call s:h("StatusLineError",   {"gui": s:underline, "bg": s:bg, "fg": s:red})
 call s:h("StatusLineWarning", {"gui": s:underline, "bg": s:bg, "fg": s:yellow})
 
-call s:h("Pmenu",         {"fg": s:fg, "bg": s:bg})
+call s:h("Pmenu",         {"fg": s:fg, "bg": s:selection})
 call s:h("PmenuSel",      {"fg": s:bg, "bg": s:primary, "gui": s:bold})
 call s:h("PmenuSbar",     {"fg": s:fg, "bg": s:subtle})
 call s:h("PmenuThumb",    {"fg": s:fg, "bg": s:subtle})
-call s:h("TabLine",       {"fg": s:fg, "bg": s:bg})
+call s:h("TabLine",       {"fg": s:fg, "bg": s:primary})
 call s:h("TabLineSel",    {"fg": s:fg, "bg": s:bg, "gui": s:bold, "cterm": s:bold})
 call s:h("TabLineFill",   {"fg": s:fg, "bg": s:primary})
 call s:h("CursorColumn",  {"bg": s:subtle})
-call s:h("CursorLine",    {"bg": s:bg})
+call s:h("CursorLine",    {"bg": s:subtle})
 call s:h("ColorColumn",   {"bg": s:subtle})
 
 call s:h("MatchParen",    {"bg": s:selection, "fg": s:fg})
