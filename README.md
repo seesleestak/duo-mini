@@ -6,11 +6,9 @@ Two color, minimal colorscheme. Based heavily on this fork of [vim-colors-plain]
 
 ## Installation
 
-```
+```vim
 Plug 'seesleestak/duo-mini'
-```
 
-```
 set termguicolors
 colorscheme duo-mini
 ```
@@ -32,6 +30,6 @@ All colors are configurable. The defaults are based on the [nord colorscheme](ht
 
 For example, if you wanted to change the background color to something darker you could set the following in your `.vimrc`:
 
-```
+```vim
 let g:duo_mini_bg = "#00000F"
 ```
