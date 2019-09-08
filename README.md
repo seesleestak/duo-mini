@@ -10,6 +10,11 @@ Two color, minimal colorscheme. Based heavily on this fork of [vim-colors-plain]
 Plug 'seesleestak/duo-mini'
 ```
 
+```
+set termguicolors
+colorscheme duo-mini
+```
+
 ## Options & Usage
 
 All colors are configurable. The defaults are based on the [nord colorscheme](https://www.nordtheme.com/) with some tweaks.
