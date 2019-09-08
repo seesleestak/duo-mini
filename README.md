@@ -21,9 +21,9 @@ All colors are configurable. The defaults are based on the [nord colorscheme](ht
 | `g:duo_mini_primary`    | Accent color           |
 | `g:duo_mini_subtle`     | Comment color          |
 | `g:duo_mini_selection`  | Visual selection color |
-| `g:duo_mini_red`        |                        |
-| `g:duo_mini_yellow`     |                        |
-| `g:duo_mini_green`      |                        |
+| `g:duo_mini_red`        | Used for git, diff     |
+| `g:duo_mini_yellow`     | Used for git, diff     |
+| `g:duo_mini_green`      | Used for git, diff     |
 
 For example, if you wanted to change the background color to something darker you could set the following in your `.vimrc`:
 
