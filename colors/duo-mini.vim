@@ -11,9 +11,9 @@ let g:colors_name = "duo-mini"
 set background=dark
 
 " Default colors
-let s:bg        = { "gui": "#252A33", "cterm": "0" }  " Background color
+let s:bg        = { "gui": "#252A33", "cterm": "NONE" }  " Background color
 let s:fg        = { "gui": "#D8DEE9", "cterm": "7" }  " Normal text color
-let s:primary   = { "gui": "#88C0D0", "cterm": "2" }  " Accent color
+let s:primary   = { "gui": "#88C0D0", "cterm": "6" }  " Accent color
 let s:subtle    = { "gui": "#616E88", "cterm": "8" }  " Comment color
 let s:selection = { "gui": "#434C5E", "cterm": "0" }  " Visual selection color
 let s:red       = { "gui": "#BF616A", "cterm": "1" }
