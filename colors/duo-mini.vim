@@ -134,17 +134,10 @@ call s:h("DiffChange",    {"fg": s:yellow})
 call s:h("DiffText",      {"fg": s:green})
 call s:h("SignColumn",    {"fg": s:green})
 
-if has("gui_running")
-  call s:h("SpellBad",    {"gui": s:underline, "sp": s:red})
-  call s:h("SpellCap",    {"gui": s:underline, "sp": s:green})
-  call s:h("SpellRare",   {"gui": s:underline, "sp": s:yellow})
-  call s:h("SpellLocal",  {"gui": s:underline, "sp": s:green})
-else
-  call s:h("SpellBad",    {"cterm": s:underline, "fg": s:red})
-  call s:h("SpellCap",    {"cterm": s:underline, "fg": s:green})
-  call s:h("SpellRare",   {"cterm": s:underline, "fg": s:yellow})
-  call s:h("SpellLocal",  {"cterm": s:underline, "fg": s:green})
-endif
+call s:h("SpellBad",    {"cterm": s:underline, "fg": s:red})
+call s:h("SpellCap",    {"cterm": s:underline, "fg": s:primary})
+call s:h("SpellRare",   {"cterm": s:underline, "fg": s:primary})
+call s:h("SpellLocal",  {"cterm": s:underline, "fg": s:green})
 
 """ Help
 hi link helpHyperTextEntry Title
