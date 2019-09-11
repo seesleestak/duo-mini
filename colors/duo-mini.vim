@@ -164,41 +164,48 @@ call s:h("ColorColumn",   {"bg": s:subtle})
 call s:h("MatchParen",    {"bg": s:selection, "fg": s:fg})
 call s:h("qfLineNr",      {"fg": s:subtle})
 
-call s:h("htmlH1",        {"bg": s:bg, "fg": s:fg})
-call s:h("htmlH2",        {"bg": s:bg, "fg": s:fg})
-call s:h("htmlH3",        {"bg": s:bg, "fg": s:fg})
-call s:h("htmlH4",        {"bg": s:bg, "fg": s:fg})
-call s:h("htmlH5",        {"bg": s:bg, "fg": s:fg})
-call s:h("htmlH6",        {"bg": s:bg, "fg": s:fg})
-
-hi link diffRemoved       DiffDelete
-hi link diffAdded         DiffAdd
+hi! link diffRemoved       DiffDelete
+hi! link diffAdded         DiffAdd
 
 " JS
-hi link jsFlowTypeKeyword Statement
-hi link jsFlowImportType Statement
-hi link jsFunction Statement
-hi link jsGlobalObjects Normal
-hi link jsGlobalNodeObjects Normal
-hi link jsArrowFunction Noise
-hi link StorageClass Statement
+hi! link jsFlowTypeKeyword Statement
+hi! link jsFlowImportType Statement
+hi! link jsFunction Statement
+hi! link jsGlobalObjects Normal
+hi! link jsGlobalNodeObjects Normal
+hi! link jsArrowFunction Noise
+hi! link StorageClass Statement
 
 " XML
 call s:h("xmlTag", {"bg": s:bg, "fg": s:primary})
-hi link xmlTagName xmlTag
-hi link xmlEndTag xmlTag
-hi link xmlAttrib xmlTag
+hi! link xmlTagName xmlTag
+hi! link xmlEndTag xmlTag
+hi! link xmlAttrib xmlTag
 
 " Markdown
-hi link markdownH1 Statement
-hi link markdownH2 Statement
-hi link markdownH3 Statement
-hi link markdownH4 Statement
-hi link markdownH5 Statement
-hi link markdownH6 Statement
-hi link markdownListMarker Constant
-hi link markdownCode Constant
-hi link markdownCodeBlock Constant
-hi link markdownCodeDelimiter Constant
-hi link markdownHeadingDelimiter Constant
-hi link markdownUrl Constant
+hi! link markdownH1 Statement
+hi! link markdownH2 Statement
+hi! link markdownH3 Statement
+hi! link markdownH4 Statement
+hi! link markdownH5 Statement
+hi! link markdownH6 Statement
+hi! link markdownListMarker Constant
+hi! link markdownCode Constant
+hi! link markdownCodeBlock Constant
+hi! link markdownCodeDelimiter Constant
+hi! link markdownHeadingDelimiter Constant
+hi! link markdownUrl Constant
+
+call s:h("htmlArg", { "fg": s:fg })
+call s:h("htmlLink", { "fg": s:fg, "cterm": "NONE" })
+call s:h("htmlItalic", { "cterm": s:italic })
+hi! link htmlTag xmlTag
+hi! link htmlEndTag xmlEndTag
+hi! link htmlTagN htmlTag
+hi! link htmlH1 Normal
+hi! link htmlH2 Normal
+hi! link htmlH3 Normal
+hi! link htmlH4 Normal
+hi! link htmlH5 Normal
+hi! link htmlH6 Normal
+hi! link htmlSpecialChar Special
